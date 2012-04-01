@@ -1,0 +1,46 @@
+#\u5b9a\u4e49\u88ab\u65e5\u5fd7\u6355\u83b7\u7684\u4fe1\u606f\u7ea7\u522b
+#log4j.rootLogger=Debug, Common,A1
+#ERROR\u3001WARN\u3001INFO\u3001DEBUG
+#log4j.rootLogger=Debug,Common,A1
+#log4j.appender.Common=org.apache.log4j.RollingFileAppender
+#log4j.appender.Common.File=${logdir}./common.log
+#log4j.appender.Common.Append=true
+#log4j.appender.Common.MaxFileSize=10240kb
+#log4j.appender.Common.layout=org.apache.log4j.PatternLayout
+#log4j.appender.Common.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} [%t] [%c] [%p] - %m%n
+
+#\u6570\u636e\u5e93\u8fde\u63a5\u6c60\u65e5\u5fd7
+log4j.logger.dblog=info,dbpool,A1
+#log4j.logger.dblog=info,A1
+log4j.appender.dbpool=org.apache.log4j.RollingFileAppender
+log4j.appender.dbpool.File=${logdir}./DBConnectionManagerLog.log
+log4j.appender.dbpool.Append=true
+log4j.appender.dbpool.MaxFileSize=10240kb
+log4j.appender.dbpool.layout=org.apache.log4j.PatternLayout
+log4j.appender.dbpool.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} [%t] [%c] [%p] - %m%n
+
+#web\u6846\u67b6\u65e5\u5fd7
+log4j.logger.framelog=info,frame,A1
+#log4j.logger.framelog=info,A1
+log4j.appender.frame=org.apache.log4j.RollingFileAppender
+log4j.appender.frame.File=${logdir}./FrameWorkLog.log
+log4j.appender.frame.Append=true
+log4j.appender.frame.MaxFileSize=10240kb
+log4j.appender.frame.layout=org.apache.log4j.PatternLayout
+log4j.appender.frame.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} [%t] [%c] [%p] - %m%n
+
+#\u7528\u6237\u8bbf\u95ee\u4fe1\u606f\u65e5\u5fd7
+log4j.logger.userlog=info,access,A1
+#log4j.logger.userlog=info,A1
+log4j.appender.access=org.apache.log4j.RollingFileAppender
+log4j.appender.access.File=${logdir}./UserAccess.log
+log4j.appender.access.Append=true
+log4j.appender.access.MaxFileSize=10240kb
+log4j.appender.access.layout=org.apache.log4j.PatternLayout
+log4j.appender.access.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} [%t] [%c] [%p] - %m%n
+
+# ConsoleAppender \u8f93\u51fa
+log4j.appender.A1=org.apache.log4j.ConsoleAppender
+log4j.appender.A1.layout=org.apache.log4j.PatternLayout
+log4j.appender.A1.layout.ConversionPattern=%-d{yyyy-MM-dd HH:mm:ss,SSS} [%c]-[%p] %m%n
+

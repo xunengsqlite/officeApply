@@ -1,0 +1,12 @@
+$!{userRealName}:
+
+管理员修改了你的基本信息：
+账号:$!{userName}
+密码:$!{password}
+姓名:$!{userRealName}
+
+请登录系统确认。系统地址：
+$!{serverURL}
+
+如您有任何疑问，请发送邮件给如下邮箱，我们将及时处理您的问题。
+$!{mailAddress}

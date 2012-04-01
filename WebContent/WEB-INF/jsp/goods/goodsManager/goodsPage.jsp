@@ -1,0 +1,150 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" import="java.util.*,com.fnst.officeapply.entity.*"%>
+<%@ page import="com.fnst.officeapply.common.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<%
+	String contextPath = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ contextPath + "/";
+%>
+<head>
+<base href="<%=basePath%>"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>goods list</title>
+<style type="text/css">
+.content{
+		background-color: gray;
+		text-align: left;
+	}
+	.content td{
+		background-color: rgb(232,253,253);
+	}
+	.content th{
+		background-color: rgb(128,164,247);
+	}
+
+a {
+	text-decoration: none;
+}
+
+.goodspage {
+	margin-left: 250px;
+	margin-top: 20px;
+}
+.button{
+	background-color: #82daf0;
+}
+</style>
+</head>
+
+<body style="background-image: url('images/login/bg_form.PNG'); font-family: SimSun">
+<table align="center">
+	<tr>
+		<jsp:include page="../../common/header.jsp"></jsp:include>
+	</tr>
+</table>
+<table align="left">
+	<jsp:include page="../../common/left.jsp"></jsp:include>
+</table>
+	<%
+		String flag = request.getParameter("isOK");
+		if ("true".equals(flag)) {
+	%>
+	<span style="color: red">成功!!</span>
+	<%
+		} else if ("false".equals(flag)) {
+	%>
+	<span style="color: red">失败!!</span>
+	<%
+		}
+	%>
+	<%
+		String qGoodsName = ComUtil.changeNullVal((String)request.getAttribute("qGoodsName"),"");
+		Integer pageNum = (Integer)request.getAttribute("pageNum_g");
+		pageNum = (pageNum == null ? 1 : pageNum);
+	%>
+<form action="goods/manager/goodsNextList.action" method="get">
+	<table border="0" class="content">
+	<tr><th>物品名:</th>
+	<td><input type="text" name="qGoodsName"/></td>
+	<td><input type="submit" value="查询" class="button"/></td>
+	<td ><font color="red">*默认查询所有物品</font></td>
+	</tr>
+	</table>
+</form>
+
+<form action="goods/manager/goodsAdderPage.action" method="get">
+<table width="60%">
+	<!-- <tr align="center">
+		<th><font color="bule" style="font-weight: bolder; font-size: xx-large;">物品管理</font></th>
+	</tr> -->
+	<tr>
+	<td align="right">
+		<input type="hidden" name="qGoodsName" value="<%=qGoodsName %>"/>
+		<input type="hidden" name="pageNum" value="<%=pageNum %>"/>
+		<input type="submit" value="添加物品"  class="button"></td>
+	</tr>
+</table>
+</form>
+
+<div class="goodsList">
+<table class="content" border="1" width="60%" cellpadding="0"
+	cellspacing="0" style="border: 1px; border-color: black;">
+	<tr bgcolor="#FFFFF">
+		<th align="left">编号</th>
+		<th align="left">品名和规格</th>
+		<th align="left">单位</th>
+		<th align="left">操作</th>
+	</tr>
+	<%
+		Integer i = (Integer)request.getAttribute("serialNum");
+		List<Goods> glists = (ArrayList<Goods>)request.getAttribute("goodslist");
+		
+		Integer lastPageNum = (Integer)request.getAttribute("lastPageNum");
+		lastPageNum = (lastPageNum == null ? 1 : lastPageNum);
+		if (glists != null) {
+			for (Goods goods : glists) {
+	%>
+	<tr>
+		<td><%=++i%></td>
+		<td id=<%=i%>><%=goods.getGoodsName()%></td>
+		<td><%=goods.getGoodsUnit()%></td>
+		<td>
+		<form id="form<%=i %>" action="" method="post">
+			<input type="hidden" name="goodsName" value="<%=goods.getGoodsName()%>"/>
+			<input type="hidden" name="goodsID" value="<%=goods.getId()%>"/>
+			<input type="hidden" name="qGoodsName" value="<%=qGoodsName%>"/>
+			<input type="hidden" name="pageNum" value="<%=pageNum%>"/>
+			<input type="button" onclick="handle('form<%=i %>','goods/manager/goodsUpdatePage.action',1)" value="修改"  class="button">
+			<input type="button" onclick="handle('form<%=i %>','goods/manager/delGoods.action',0)" value="删除"  class="button">
+		</form></td>
+	</tr>
+	<%
+	}}
+	%>
+	<tr><td colspan="5" align="right">
+		<a href="goods/manager/goodsNextList.action?pageNum=1&qGoodsName=<%=qGoodsName %>">首页</a>
+		<a href="goods/manager/goodsNextList.action?pageNum=<%=pageNum - 1%>&qGoodsName=<%=qGoodsName %>">上一页</a>
+		<a href="goods/manager/goodsNextList.action?pageNum=<%=pageNum + 1%>&qGoodsName=<%=qGoodsName %>">下一页</a>
+		<a href="goods/manager/goodsNextList.action?pageNum=<%=lastPageNum %>&qGoodsName=<%=qGoodsName %>">末页</a></td></tr>
+	<tr><td colspan="4"></td></tr>
+</table>
+</div>
+
+<!-- <form id="pageform" action="goods/manager/goodsNextList.action" method="post">
+<table align="right" border="0">
+	<tr><td>
+	<input type="hidden" name="id" value=""/>
+	<input class="button" type="button" name="submit1" value="首页" onclick="changePage('pageform','1')"/>
+	<input class="button" type="button" name="submit2" value="下一页" onclick="changePage('pageform','2')"/>
+	<input class="button" type="button" name="submit3" value="上一页" onclick="changePage('pageform','3')"/>
+	<input class="button" type="button" name="submit4" value="末页" onclick="changePage('pageform','4')" />
+	</td></tr>
+</table>
+</form> -->
+<!-- <div class="goodspage"><a href='#' id='1'>首页</a>|<a href='#' id='2'>下一页</a>|<a
+	href='#' id='3'>上一页</a>|<a href='#' id='4'>末页</a></div> -->
+</body>
+</html>

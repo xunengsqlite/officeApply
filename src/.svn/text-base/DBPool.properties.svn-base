@@ -1,0 +1,12 @@
+#conn.driver=com.mysql.jdbc.Driver
+#conn.url=jdbc:mysql://localhost/caesar1?useUnicode=true&characterEncoding=gb2312
+conn.url=jdbc:sqlite:
+conn.driver=org.sqlite.JDBC
+#maxconn=0\u8868\u793a\u6700\u5927\u503c\u4e0d\u53d7\u9650
+conn.maxconn=0
+#conn.username=root
+#conn.password=root
+conn.minconn=2
+conn.onceconn=5
+conn.request.timeout=1000
+conn.maxfreetime=600000

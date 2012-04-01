@@ -1,0 +1,94 @@
+#	example:
+#	requestname = HandleClass,Method,GET/POST
+#	requestname = HandleClass,Method,GET
+#	requestname = HandleClass,Method,POST
+#	requestname = HandleClass,Method
+#	==============================================
+#GET/POST\u7684\u610f\u601d\u662f\u4e1a\u52a1\u5904\u7406\u5141\u8bb8\u63a5\u53d7\u54ea\u79cdrequest\u8bf7\u6c42\u7684\u65b9\u5f0f\uff0c\u7701\u7565GET/POST\u8868\u793a\u4e24\u79cd\u65b9\u5f0f\u90fd\u53ef\u4ee5
+/authFailPage.action=com.fnst.officeapply.action.CommonAction,authFailPage,POST
+/errorPage.action=com.fnst.officeapply.action.CommonAction,errorPage,POST
+/validateCode.action=com.fnst.officeapply.action.CommonAction,validateCode
+/showOnliner.action=com.fnst.officeapply.action.CommonAction,showOnliner
+/loginPage.action=com.fnst.officeapply.action.AuthorizerAction,loginPage
+/login.action=com.fnst.officeapply.action.AuthorizerAction,login,POST
+/logout.action=com.fnst.officeapply.action.AuthorizerAction,logout
+/homePage.action=com.fnst.officeapply.action.HomePageAction,homePage
+
+#/user/userList.action=com.fnst.officeapply.action.ComUserAction,defUserList
+/user/userNextList.action=com.fnst.officeapply.action.ComUserAction,userNextList
+/user/userAdderPage.action=com.fnst.officeapply.action.ComUserAction,userAdderPage
+/user/addUser.action=com.fnst.officeapply.action.ComUserAction,addUser,POST
+/user/mailPage.action=com.fnst.officeapply.action.ComUserAction,mailPage
+/user/applyGoodsReminder.action=com.fnst.officeapply.action.ComUserAction,applyGoodsReminder,POST
+/user/userUpdatePage.action=com.fnst.officeapply.action.ComUserAction,userUpdatePage,POST
+/user/updateUser.action=com.fnst.officeapply.action.ComUserAction,updateUser,POST
+/user/delUser.action=com.fnst.officeapply.action.ComUserAction,delUser,POST
+/user/delAll.action=com.fnst.officeapply.action.ComUserAction,delAll,POST
+/user/psdUpdatePage.action=com.fnst.officeapply.action.ComUserAction,psdUpdatePage
+/user/updatePassword.action=com.fnst.officeapply.action.ComUserAction,updatePassword,POST
+/user/autoComplete.action=com.fnst.officeapply.action.ComUserAction,autoComplete
+
+/admin/adminPage.action=com.fnst.officeapply.action.AdminAction,adminPage
+/admin/save.action=com.fnst.officeapply.action.AdminAction,save,POST
+/admin/beanMonitor.action=com.fnst.officeapply.action.AdminAction,beanMonitor
+#/admin/reload.action=com.fnst.officeapply.action.AdminAction,reload,POST
+#/admin/user/defUserList.action=com.fnst.officeapply.action.AdminUserAction,defUserList
+/admin/user/userNextList.action=com.fnst.officeapply.action.AdminUserAction,userNextList
+/admin/user/userAdderPage.action=com.fnst.officeapply.action.AdminUserAction,userAdderPage
+/admin/user/addUser.action=com.fnst.officeapply.action.AdminUserAction,addUser,POST
+/admin/user/userUpdatePage.action=com.fnst.officeapply.action.AdminUserAction,userUpdatePage,POST
+/admin/user/updateUser.action=com.fnst.officeapply.action.AdminUserAction,updateUser,POST
+/admin/user/delUser.action=com.fnst.officeapply.action.AdminUserAction,delUser,POST
+/admin/user/autoComplete.action=com.fnst.officeapply.action.AdminUserAction,autoComplete
+
+/admin/orgz/defOrgzList.action=com.fnst.officeapply.action.OrganizationAction,defOrgzList
+/admin/orgz/orgzNextList.action=com.fnst.officeapply.action.OrganizationAction,orgzNextList
+/admin/orgz/adderPage.action=com.fnst.officeapply.action.OrganizationAction,adderPage
+/admin/orgz/add.action=com.fnst.officeapply.action.OrganizationAction,add,POST
+/admin/orgz/updatePage.action=com.fnst.officeapply.action.OrganizationAction,updatePage
+/admin/orgz/update.action=com.fnst.officeapply.action.OrganizationAction,update,POST
+/admin/orgz/del.action=com.fnst.officeapply.action.OrganizationAction,delete,POST
+
+#/goods/manager/defGoodsList.action=com.fnst.officeapply.action.GoodsManagerAction,defGoodsList
+/goods/manager/goodsNextList.action=com.fnst.officeapply.action.GoodsManagerAction,goodsNextList
+/goods/manager/delGoods.action=com.fnst.officeapply.action.GoodsManagerAction,delGoods,POST
+/goods/manager/goodsUpdatePage.action=com.fnst.officeapply.action.GoodsManagerAction,goodsUpdatePage
+/goods/manager/updateGoods.action=com.fnst.officeapply.action.GoodsManagerAction,updateGoods,POST
+/goods/manager/goodsAdderPage.action=com.fnst.officeapply.action.GoodsManagerAction,goodsAdderPage
+/goods/manager/addGoods.action=com.fnst.officeapply.action.GoodsManagerAction,addGoods,POST
+
+/currentRecord/goodsApply.action=com.fnst.officeapply.action.GoodsApplyAction,applyGoods,POST
+/currentRecord/currRecordByUser.action=com.fnst.officeapply.action.GoodsApplyAction,currRecordByUser
+/currentRecord/currRecordByGoods.action=com.fnst.officeapply.action.GoodsApplyAction,currRecordByGoods
+/currentRecord/enableApplyPage.action=com.fnst.officeapply.action.GoodsApplyAction,enableApplyPage
+/currentRecord/allowApply.action=com.fnst.officeapply.action.GoodsApplyAction,allowApply,POST
+/currentRecord/delOwnGoods.action=com.fnst.officeapply.action.GoodsApplyAction,delOwnGoods
+
+#/history/defHistoryList.action=com.fnst.officeapply.action.HistoryRecordAction,defHistoryList
+/history/historyNextList.action=com.fnst.officeapply.action.HistoryRecordAction,historyNextList
+
+/history/historyRecordByUser.action=com.fnst.officeapply.action.HistoryRecordAction,historyRecordByUser
+/history/historyRecordByGoods.action=com.fnst.officeapply.action.HistoryRecordAction,historyRecordByGoods
+/history/download.action=com.fnst.officeapply.action.HistoryRecordAction,download,POST
+/history/noteUpdatePage.action=com.fnst.officeapply.action.HistoryRecordAction,noteUpdatePage
+/history/updateNote.action=com.fnst.officeapply.action.HistoryRecordAction,updateNote,POST
+
+#error page.
+error.page.action=errorPage.action
+#redirect page.
+redirect.page=/WEB-INF/redirectPage.jsp
+#default action.
+default.action=homePage.action
+#\u62e6\u622a\u5668
+interceptor.encoding=com.fnst.officeapply.framework.interceptor.EncodingInterceptor
+interceptor.exception=com.fnst.officeapply.framework.interceptor.ExceptionInterceptor
+interceptor.request.values=com.fnst.officeapply.framework.interceptor.RequestValInterceptor
+
+#This can be used to set your default encoding
+constant.encoding=utf-8
+
+constant.action.extension=.action
+
+### when set to true, resource bundles will be reloaded on _every_ request.
+### this is good during development, but should never be used in production
+constant.devMode=false

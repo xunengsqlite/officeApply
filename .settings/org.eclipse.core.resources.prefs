@@ -1,0 +1,14 @@
+#Sat Mar 31 16:50:31 CST 2012
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/resource/mailvm/AddUserRemind.vm=UTF-8
+encoding//WebContent/WEB-INF/resource/mailvm/OfficeApplyRemind.vm=UTF-8
+encoding//WebContent/WEB-INF/resource/mailvm/UpdateUserRemind.vm=UTF-8
+encoding//src/com/fnst/officeapply/common/ComUtil.java=UTF-8
+encoding//src/com/fnst/officeapply/common/SysUtil.java=UTF-8
+encoding//src/com/fnst/officeapply/common/mail=ms932
+encoding//src/com/fnst/officeapply/dbpool=UTF-8
+encoding//src/com/fnst/officeapply/framework/DispatcherExecuterFilter.java=UTF-8
+encoding//src/com/fnst/officeapply/framework/DispatcherExecuterInfo.java=UTF-8
+encoding//src/com/fnst/officeapply/framework/interceptor/EncodingInterceptor.java=UTF-8
+encoding//src/com/fnst/officeapply/framework/interceptor/ExceptionInterceptor.java=UTF-8
+encoding/<project>=UTF-8
